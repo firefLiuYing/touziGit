@@ -12,8 +12,7 @@ public class battleControl : MonoBehaviour
     void Start()
     {
         touzis = loadPref.getPref("touzi");
-        creatTouzi(count);
-        creatWeapon();
+        playerTurnStart();
     }
     void Update()
     {
