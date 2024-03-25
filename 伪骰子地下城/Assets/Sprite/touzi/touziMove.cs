@@ -17,13 +17,20 @@ public class touziMove : MonoBehaviour
     }
     public void beClickUp()
     {
-        if(!info.beUsed)
+        StartCoroutine(laterBack());
+    }
+    IEnumerator laterBack()
+    {
+        float time = 0;
+        while(time<0.1f)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        if (!info.beUsed)
         {
             autoSort.touzis.Add(info);
-        }
-        else
-        {
-
+            beChoseControl.touzis.Remove(info);
         }
     }
     public void beDrag()

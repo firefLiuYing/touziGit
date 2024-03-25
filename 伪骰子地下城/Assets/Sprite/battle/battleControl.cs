@@ -11,6 +11,17 @@ public class battleControl : MonoBehaviour
         touzis = loadPref.getPref("touzi");
         creatTouzi(count);
     }
+    void Update()
+    {
+        
+    }
+    public void onClickNext()
+    {
+        for(int i = 0; i < autoSort.touzis.Count; i++)
+        {
+            autoSort.touzis[i].beUsed = true;
+        }
+    }
     GameObject touzis;
     public int count;
     void creatTouzi(int count)
