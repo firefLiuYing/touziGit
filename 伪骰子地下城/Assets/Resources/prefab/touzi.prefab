@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 1442156631563537085}
   - component: {fileID: 2080454539996090864}
   - component: {fileID: 3122500099093801726}
+  - component: {fileID: 916584155584701387}
   m_Layer: 5
   m_Name: touzi
   m_TagString: Touzi
@@ -347,3 +348,15 @@ MonoBehaviour:
   isfit: 1
   count: 0
   beUsed: 0
+--- !u!114 &916584155584701387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713871438313934386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e92a09b3da1ea49ab11ab4278695f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

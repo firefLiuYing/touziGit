@@ -8,11 +8,18 @@ public class weaponSort : MonoBehaviour
         = new List<weaponDeath>();
     void Start()
     {
-        
+        fixToScreen();
     }
     void Update()
     {
         autoSort();
+    }
+    int W = 3840;
+    int screenW;
+    void fixToScreen()
+    {
+        screenW = Screen.width;
+        deltaWidth *= ((float)screenW) / W;
     }
     public float deltaWidth;
     void autoSort()
