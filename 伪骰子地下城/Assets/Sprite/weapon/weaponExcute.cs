@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class weaponExcute : MonoBehaviour
 {
     weaponInfo info;
+    RectTransform Rtransform;
     void Start()
     {
         info = GetComponent<weaponInfo>();
         excute += aiuhdiua;
+        Rtransform = GetComponent<RectTransform>();
+        rect = Rtransform.rect;
+        rect.center=transform.position;
     }
     int a = 0;
     void aiuhdiua()
@@ -19,18 +23,22 @@ public class weaponExcute : MonoBehaviour
     }
     void Update()
     {
-        
+        ifinImage();
     }
-    public Action excute;
-    public void onClickUp()
+    public Rect rect;
+    public bool isin;
+    public Vector2 pos;
+    void ifinImage()
     {
-        if(beChoseControl.touzis.Count>0)
+        pos = Input.mousePosition;
+        isin = rect.Contains(Input.mousePosition);
+        if (rect.Contains(Input.mousePosition))
         {
-            if (beChoseControl.touzis[0].isfit)
+            if (Input.GetMouseButtonUp(0))
             {
                 excute();
             }
         }
     }
-
+    public Action excute;
 }
