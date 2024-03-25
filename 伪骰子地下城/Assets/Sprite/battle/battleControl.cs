@@ -14,6 +14,7 @@ public class battleControl : MonoBehaviour
     {
         touzis = loadPref.getPref("touzi");
         playerTurnStart();
+        enermyBeH += aiuhdiua;
     }
     void Update()
     {
@@ -49,6 +50,11 @@ public class battleControl : MonoBehaviour
     void enermyBehave()
     {
         enermyBeH();
+    }
+    int a = 0;
+    void aiuhdiua()
+    {
+        a++;
     }
     public void onClickNext()
     {

@@ -12,12 +12,12 @@ public class touziInfo : MonoBehaviour
         transform.SetParent(GameObject.Find("touziUI").
             transform);
         count = Random.Range(1, 7);
-        valuePrint();
     }
     public bool isfit = true;
     public int count;
     void Update()
     {
+        valuePrint();
         death();
     }
     void death()
