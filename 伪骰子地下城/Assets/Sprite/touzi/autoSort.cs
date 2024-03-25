@@ -22,10 +22,10 @@ public class autoSort : MonoBehaviour
     {
         for(int i = 0; i < touzis.Count; i++)
         {
-            /*touzis[i].transform.position=
-                transform.position+new Vector3
-                (deltaWidth*(i%widCount),
-                deltaHeight*(i/widCount));*/
+            touzis[i].transform.position =
+                transform.position + new Vector3
+                (deltaWidth * (i % widCount),
+                deltaHeight * (i / widCount));
         }
     }
 }

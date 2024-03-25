@@ -11,7 +11,6 @@ public class touziInfo : MonoBehaviour
     {
         count = Random.Range(1, 7);
         valuePrint();
-        autoSort.touzis.Add(this);
     }
     public bool isfit = true;
     public int count;
@@ -24,6 +23,7 @@ public class touziInfo : MonoBehaviour
         if(beUsed)
         {
             beChoseControl.touzis.Remove(this);
+            autoSort.touzis.Remove(this);
             Destroy(gameObject); 
             beUsed = false;
         }

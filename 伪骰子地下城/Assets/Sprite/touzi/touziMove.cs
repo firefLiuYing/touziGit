@@ -15,6 +15,17 @@ public class touziMove : MonoBehaviour
     {
         
     }
+    public void beClickUp()
+    {
+        if(!info.beUsed)
+        {
+            autoSort.touzis.Add(info);
+        }
+        else
+        {
+
+        }
+    }
     public void beDrag()
     {
         //还没写条件
@@ -22,6 +33,7 @@ public class touziMove : MonoBehaviour
     }
     public void beClickDown()
     {
+        autoSort.touzis.Remove(info);
         beChoseControl.touzis.Add(info);
     }
 }
