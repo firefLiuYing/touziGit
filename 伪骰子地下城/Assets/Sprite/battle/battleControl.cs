@@ -6,6 +6,8 @@ public class battleControl : MonoBehaviour
 {
     public battleInfo player;
     public battleInfo enermy;
+    public GameObject successUI;
+    public GameObject lostUI;
     void Start()
     {
         touzis = loadPref.getPref("touzi");
@@ -13,7 +15,26 @@ public class battleControl : MonoBehaviour
     }
     void Update()
     {
-        
+        resultCalculate();
+    }
+    void resultCalculate()
+    {
+        if(enermy.curHP<=0)
+        {
+            successUI.SetActive(true);
+        }
+        if(player.curHP<=0)
+        {
+            lostUI.SetActive(true);
+        }
+    }
+    void playerTurnStart()
+    {
+        creatTouzi(count);
+    }
+    void enermyBehave()
+    {
+        playerTurnStart();
     }
     public void onClickNext()
     {
@@ -21,6 +42,7 @@ public class battleControl : MonoBehaviour
         {
             autoSort.touzis[i].beUsed = true;
         }
+        enermyBehave();
     }
     GameObject touzis;
     public int count;
@@ -28,8 +50,8 @@ public class battleControl : MonoBehaviour
     {
         for(int i = 0; i < count; i++)
         {
-            touzis = Instantiate(touzis);
-            autoSort.touzis.Add(touzis.
+            GameObject touzi = Instantiate(touzis);
+            autoSort.touzis.Add(touzi.
                 GetComponent<touziInfo>());
         }
     }
