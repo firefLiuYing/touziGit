@@ -39,7 +39,8 @@ public class weaponExcute : MonoBehaviour
             {
                 if(beChoseControl.touzis.Count>0)
                 {
-                    excute();
+                    if (beChoseControl.touzis[0].isfit)
+                        excute();
                 }
             }
         }

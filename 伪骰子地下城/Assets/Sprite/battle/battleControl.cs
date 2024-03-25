@@ -55,6 +55,11 @@ public class battleControl : MonoBehaviour
         {
             autoSort.touzis[i].beUsed = true;
         }
+        for(int i = 0;i<weaponSort.weapons.Count;i++)
+        {
+            weaponSort.weapons[i].GetComponentInChildren
+                <weaponInfo>().beUsed = true;
+        }
         enermyBehave();
     }
     GameObject touzis;

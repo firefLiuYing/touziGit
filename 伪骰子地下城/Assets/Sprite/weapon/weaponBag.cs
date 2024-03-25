@@ -9,6 +9,7 @@ public class weaponBag : MonoBehaviour
     void Start()
     {
         weapons.Add(loadPref.getPref("sword"));
+        weapons.Add(loadPref.getPref("knife"));
     }
     void Update()
     {
