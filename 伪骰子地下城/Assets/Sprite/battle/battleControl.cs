@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,9 +45,10 @@ public class battleControl : MonoBehaviour
         creatTouzi(count);
         creatWeapon();
     }
+    public Action enermyBeH;
     void enermyBehave()
     {
-        playerTurnStart();
+        enermyBeH();
     }
     public void onClickNext()
     {

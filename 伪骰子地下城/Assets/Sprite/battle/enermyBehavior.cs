@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class enermyBehavior : MonoBehaviour
 {
+    battleControl battleControl;
     void Start()
     {
-        touzis = loadPref.getPref("touzis");
+        touzis = loadPref.getPref("touzi");
+        battleControl =GetComponent<battleControl>();
+        battleControl.enermyBeH += enermyTurnStart;
     }
     void Update()
     {
         
     }
     GameObject touzis;
-    void creatTouzis(int count)
+    void creatTouzi(int count)
     {
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
-            GameObject touzi=Instantiate(touzis);
-            enermyTouziSort.touzis.Add(
-                touzi.GetComponent<touziInfo>());
+            GameObject touzi = Instantiate(touzis);
+            enermyTouziSort.touzis.Add(touzi.
+                GetComponent<touziInfo>());
         }
     }
     public int count;
     void enermyTurnStart()
     {
-        creatTouzis(count);
+        creatTouzi(count);
     }
 }

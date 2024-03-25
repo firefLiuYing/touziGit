@@ -10,9 +10,24 @@ public class enermyTouziSort : MonoBehaviour
     public int maxCount;
     public float deltaWidth;
     public float deltaHeight;
+    void Start()
+    {
+        fixToScreen();
+    }
     void Update()
     {
         sortTouzi();
+    }
+    int W = 3840;
+    int H = 2160;
+    int screenW;
+    int screenH;
+    void fixToScreen()
+    {
+        screenW = Screen.width;
+        screenH = Screen.height;
+        deltaWidth *= ((float)screenW) / W;
+        deltaHeight *= ((float)screenH) / H;
     }
     void sortTouzi()
     {
