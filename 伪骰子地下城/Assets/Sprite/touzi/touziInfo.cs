@@ -9,6 +9,8 @@ public class touziInfo : MonoBehaviour
     public TextMeshProUGUI countValue;
     void Start()
     {
+        transform.SetParent(GameObject.Find("touziUI").
+            transform);
         count = Random.Range(1, 7);
         valuePrint();
     }
