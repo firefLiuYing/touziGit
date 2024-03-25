@@ -8,14 +8,26 @@ public class battleControl : MonoBehaviour
     public battleInfo enermy;
     public GameObject successUI;
     public GameObject lostUI;
+    public Transform weaponUI;
     void Start()
     {
         touzis = loadPref.getPref("touzi");
         creatTouzi(count);
+        creatWeapon();
     }
     void Update()
     {
         resultCalculate();
+    }
+    void creatWeapon()
+    {
+        for(int i= 0;i<weaponBag.weapons.Count;i++)
+        {
+            GameObject weapon=Instantiate
+                (weaponBag.weapons[i]);
+            weaponSort.weapons.Add(weapon.
+                GetComponent<weaponDeath>());
+        }
     }
     void resultCalculate()
     {
@@ -31,6 +43,7 @@ public class battleControl : MonoBehaviour
     void playerTurnStart()
     {
         creatTouzi(count);
+        creatWeapon();
     }
     void enermyBehave()
     {

@@ -19,12 +19,13 @@ public class weaponInfo : MonoBehaviour
     }
     public bool isCountless;
     public int count=1;
+    public bool beUsed=false;
     public void deathCalculat()
     {
         count--;
         if (count <= 0)
         {
-            Destroy(gameObject);
+            beUsed = true;
         }
     }
 }

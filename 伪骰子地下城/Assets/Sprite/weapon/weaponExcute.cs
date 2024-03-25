@@ -24,6 +24,11 @@ public class weaponExcute : MonoBehaviour
     void Update()
     {
         ifinImage();
+        updatePos();
+    }
+    void updatePos()
+    {
+        rect.center = transform.position;
     }
     Rect rect;
     void ifinImage()
