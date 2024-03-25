@@ -20,5 +20,6 @@ public class swordEff : MonoBehaviour
         int count =
         beChoseControl.touzis[0].count;
         battleControl.playerHit(count);
+        beChoseControl.touzis[0].beUsed = true;
     }
 }

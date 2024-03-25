@@ -25,18 +25,17 @@ public class weaponExcute : MonoBehaviour
     {
         ifinImage();
     }
-    public Rect rect;
-    public bool isin;
-    public Vector2 pos;
+    Rect rect;
     void ifinImage()
     {
-        pos = Input.mousePosition;
-        isin = rect.Contains(Input.mousePosition);
         if (rect.Contains(Input.mousePosition))
         {
             if (Input.GetMouseButtonUp(0))
             {
-                excute();
+                if(beChoseControl.touzis.Count>0)
+                {
+                    excute();
+                }
             }
         }
     }
