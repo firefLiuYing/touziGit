@@ -292,6 +292,7 @@ MonoBehaviour:
   lostUI: {fileID: 1922743771}
   weaponUI: {fileID: 1956508300}
   count: 6
+  playerMP: {fileID: 1308265155}
 --- !u!4 &118679799
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,6 +1129,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1209,6 +1211,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57555ea74698a74891d515d527ce8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526992005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2742,7 @@ GameObject:
   - component: {fileID: 1308265151}
   - component: {fileID: 1308265154}
   - component: {fileID: 1308265153}
+  - component: {fileID: 1308265155}
   m_Layer: 5
   m_Name: player
   m_TagString: Player
@@ -2824,6 +2839,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 28
   curHP: 0
+--- !u!114 &1308265155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308265149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2aa40a1c817c244ba47c0b50c5b96cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MPbar: {fileID: 1352710131}
+  MPvalue: {fileID: 470373600}
+  curMP: 0
+  maxMP: 8
 --- !u!1 &1352710129
 GameObject:
   m_ObjectHideFlags: 0

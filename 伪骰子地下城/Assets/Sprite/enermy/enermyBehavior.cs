@@ -29,7 +29,7 @@ public class enermyBehavior : MonoBehaviour
             int touziCount = enermyTouziSort.touzis[i].count;
             for (int j = 0; j < enermyWeaponSort.weapons.Count; j++)
             {
-                while (t <= 0.5)
+                while (t <= 0.01)
                 {
                     t += Time.deltaTime;
                     yield return null;
@@ -43,7 +43,7 @@ public class enermyBehavior : MonoBehaviour
                     enermyTouziSort.touzis.Remove(info);
                     info.transform.position=
                         enermyWeaponSort.weapons[j].transform.position;
-                    while (t <= 0.5)
+                    while (t <= 0.01)
                     {
                         t += Time.deltaTime;
                         yield return null;

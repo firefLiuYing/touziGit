@@ -90,8 +90,10 @@ public class battleControl : MonoBehaviour
     {
         enermy.curHP -= hurt;
     }
+    public playerMPprint playerMP;
     public void enermyHit(int hurt)
     {
         player.curHP -= hurt;
+        playerMP.curMP += hurt;
     }
 }
