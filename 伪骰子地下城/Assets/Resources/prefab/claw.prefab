@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 612340771550516557}
   - component: {fileID: 1283583242448651891}
   - component: {fileID: 8503478227503588437}
+  - component: {fileID: 1516178955650015408}
   m_Layer: 5
   m_Name: InteractZone
   m_TagString: Untagged
@@ -116,6 +117,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 770caee12241f194a8081dfd93a75792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1516178955650015408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799348675428409500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04284712e44e29e4db6c46fb8d562f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3021648823447255540

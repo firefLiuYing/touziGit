@@ -13,6 +13,7 @@ public class weaponBag : MonoBehaviour
         weapons.Add(loadPref.getPref("arrow"));
         weapons.Add(loadPref.getPref("crystal")); 
         weapons.Add(loadPref.getPref("roll"));
+        weapons.Add(loadPref.getPref("claw"));
     }
     void Start()
     {
