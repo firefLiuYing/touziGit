@@ -127,7 +127,8 @@ public class battleControl : MonoBehaviour
     public void enermyHit(int hurt)
     {
         player.curHP -= hurt;
-        playerMP.curMP += hurt;
+        if(hurt> 0)
+            playerMP.curMP += hurt;
     }
     public void enermyBeFreeze(int freeze)
     {
