@@ -22,6 +22,11 @@ public class rollEff : MonoBehaviour
         beChoseControl.touzis[0].count;
         beChoseControl.touzis[0].beUsed = true;
         creatTouzi(1);
+        if (battleControl.player.rage > 0)
+        {
+            creatTouzi(1);
+            battleControl.player.rage--;
+        }
     }
     GameObject touzis;
     void creatTouzi(int count)

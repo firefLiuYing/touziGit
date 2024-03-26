@@ -21,6 +21,12 @@ public class clawEff : MonoBehaviour
         beChoseControl.touzis[0].count;
         battleControl.playerHit(count);
         battleControl.enermyBePoison(1);
+        if (battleControl.player.rage > 0)
+        {
+            battleControl.playerHit(count);
+            battleControl.enermyBePoison(1);
+            battleControl.player.rage--;
+        }
         beChoseControl.touzis[0].beUsed = true;
     }
 }

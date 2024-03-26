@@ -20,6 +20,11 @@ public class crystalEff : MonoBehaviour
         int count =
         beChoseControl.touzis[0].count;
         battleControl.enermyHit(-count);
+        if (battleControl.player.rage > 0)
+        {
+            battleControl.enermyHit(-count);
+            battleControl.player.rage--;
+        }
         beChoseControl.touzis[0].beUsed = true;
     }
 }

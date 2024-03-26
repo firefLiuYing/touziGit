@@ -20,6 +20,11 @@ public class arrowEff : MonoBehaviour
         int count =
         beChoseControl.touzis[0].count;
         battleControl.playerHit(5);
+        if(battleControl.player.rage>0)
+        {
+            battleControl.playerHit(5);
+            battleControl.player.rage--;
+        }
         beChoseControl.touzis[0].beUsed = true;
     }
 }
