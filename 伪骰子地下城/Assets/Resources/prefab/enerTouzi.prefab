@@ -145,8 +145,8 @@ GameObject:
   - component: {fileID: 6481735888518544226}
   - component: {fileID: 6646258022297426326}
   - component: {fileID: 9157927597089803595}
-  - component: {fileID: 5280756710843816169}
   - component: {fileID: 3692277507029871469}
+  - component: {fileID: 9072227681445149803}
   m_Layer: 5
   m_Name: enerTouzi
   m_TagString: Touzi
@@ -212,22 +212,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5280756710843816169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6615112028835809950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b0f7d3d923c5341ad30b11f070ea5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countValue: {fileID: 5147194740565003142}
-  isfit: 1
-  count: 0
-  beUsed: 0
 --- !u!114 &3692277507029871469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,3 +224,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e92a09b3da1ea49ab11ab4278695f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9072227681445149803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615112028835809950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170f9ef5b756b30408cd309b43c96c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countValue: {fileID: 5147194740565003142}
+  isfit: 1
+  count: 0
+  beUsed: 0

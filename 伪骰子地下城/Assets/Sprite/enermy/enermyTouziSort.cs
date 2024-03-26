@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class enermyTouziSort : MonoBehaviour
 {
-    public static List<touziInfo> touzis =
-        new List<touziInfo>();
+    public static List<enermyTouziInfo> touzis =
+        new List<enermyTouziInfo>();
     public int widCount;
     public int maxCount;
     public float deltaWidth;

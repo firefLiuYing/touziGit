@@ -41,8 +41,9 @@ public class battleControl : MonoBehaviour
             lostUI.SetActive(true);
         }
     }
-    void playerTurnStart()
+    public void playerTurnStart()
     {
+        playerTurn = true;
         creatTouzi(count);
         creatWeapon();
     }
@@ -56,18 +57,23 @@ public class battleControl : MonoBehaviour
     {
         a++;
     }
+    bool playerTurn = true;
     public void onClickNext()
     {
-        for(int i = 0; i < autoSort.touzis.Count; i++)
+        if (playerTurn)
         {
-            autoSort.touzis[i].beUsed = true;
+            for (int i = 0; i < autoSort.touzis.Count; i++)
+            {
+                autoSort.touzis[i].beUsed = true;
+            }
+            for (int i = 0; i < weaponSort.weapons.Count; i++)
+            {
+                weaponSort.weapons[i].GetComponentInChildren
+                    <weaponInfo>().beUsed = true;
+            }
+            enermyBehave();
+            playerTurn = false;
         }
-        for(int i = 0;i<weaponSort.weapons.Count;i++)
-        {
-            weaponSort.weapons[i].GetComponentInChildren
-                <weaponInfo>().beUsed = true;
-        }
-        enermyBehave();
     }
     GameObject touzis;
     public int count;
