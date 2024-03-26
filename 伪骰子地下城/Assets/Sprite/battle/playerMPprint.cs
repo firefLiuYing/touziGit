@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class playerMPprint : MonoBehaviour
 {
     public Slider MPbar;
-    public TextMeshProUGUI MPvalue;
     battleInfo info;
     public int curMP;
     public int maxMP;
@@ -23,7 +22,6 @@ public class playerMPprint : MonoBehaviour
     void mpPrint()
     {
         MPbar.value = ((float)curMP) / maxMP;
-        MPvalue.text=curMP.ToString()+"/"+maxMP.ToString();
     }
     void MPfix()
     {

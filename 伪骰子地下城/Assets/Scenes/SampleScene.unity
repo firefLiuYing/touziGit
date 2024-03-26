@@ -2852,7 +2852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MPbar: {fileID: 1352710131}
-  MPvalue: {fileID: 470373600}
   curMP: 0
   maxMP: 8
 --- !u!1 &1352710129
