@@ -46,6 +46,31 @@ public class battleControl : MonoBehaviour
         playerTurn = true;
         creatTouzi(count);
         creatWeapon();
+        playerPoisonCalcu();
+        StartCoroutine(playerFreezeCalcu());
+        playerFreezeCalcu();
+    }
+    IEnumerator playerFreezeCalcu()
+    {
+        float t = 0;
+        while(t<0.1)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        for(int i= 0;i<player.freeze&&i<autoSort.touzis.Count;i++)
+        {
+            autoSort.touzis[i].count = 1;
+        }
+        player.freeze = 0;
+    }
+    void playerPoisonCalcu()
+    {
+        if(player.poison>0)
+        {
+            enermyHit(player.poison);
+            player.poison--;
+        }
     }
     public Action enermyBeH;
     void enermyBehave()
@@ -90,10 +115,26 @@ public class battleControl : MonoBehaviour
     {
         enermy.curHP -= hurt;
     }
+    public void playerBeFreeze(int freeze)
+    {
+        player.freeze += freeze;
+    }
+    public void playerBePoison(int posion)
+    {
+        player.poison += posion;
+    }
     public playerMPprint playerMP;
     public void enermyHit(int hurt)
     {
         player.curHP -= hurt;
         playerMP.curMP += hurt;
+    }
+    public void enermyBeFreeze(int freeze)
+    {
+        enermy.freeze += freeze;
+    }
+    public void enermyBePoison(int posion)
+    {
+        enermy.poison += posion;
     }
 }

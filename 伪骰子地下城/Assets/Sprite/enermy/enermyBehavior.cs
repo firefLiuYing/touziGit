@@ -43,7 +43,7 @@ public class enermyBehavior : MonoBehaviour
                     enermyTouziSort.touzis.Remove(info);
                     info.transform.position=
                         enermyWeaponSort.weapons[j].transform.position;
-                    while (t <= 0.01)
+                    while (t <= 0.5)
                     {
                         t += Time.deltaTime;
                         yield return null;
@@ -55,6 +55,7 @@ public class enermyBehavior : MonoBehaviour
                     break;
                 }
             }
+            
         }
         while (t <= 0.5)
         {
@@ -78,7 +79,6 @@ public class enermyBehavior : MonoBehaviour
             enermyWeaponSort.weapons.Add(weapon.
                 GetComponent<enermyWeaponDeath>());
         }
-        Invoke("enermyAuto", 1);
     }
     void enermyTurnEnd()
     {
@@ -99,10 +99,33 @@ public class enermyBehavior : MonoBehaviour
     public void enermyTurnStart()
     {
         creatTouzi(count);
-        /*creatWeapon();*/
-        /*enermyAuto();*/
-        /*enermyTurnEnd();*/
-        /*startNext();*/
+        creatWeapon();
+        poisonCal();
+        StartCoroutine(freezeCal());
+    }
+    IEnumerator freezeCal()
+    {
+        float t = 0;
+        while(t<0.5)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        for(int i = 0; i < control.enermy.freeze && i < enermyTouziSort.touzis.Count; i++)
+        {
+            enermyTouziSort.touzis[i].count = 1;
+        }
+        control.enermy.freeze = 0;
+        Invoke("enermyAuto", 0.5f);
+    }
+
+    void poisonCal()
+    {
+        if(control.enermy.poison>0)
+        {
+            control.playerHit(control.enermy.poison);
+            control.enermy.poison--;
+        }
     }
     GameObject touzis;
     public int count;
@@ -114,6 +137,5 @@ public class enermyBehavior : MonoBehaviour
             enermyTouziSort.touzis.Add(touzi.
                 GetComponent<enermyTouziInfo>());
         }
-        Invoke("creatWeapon", 1);
     }
 }

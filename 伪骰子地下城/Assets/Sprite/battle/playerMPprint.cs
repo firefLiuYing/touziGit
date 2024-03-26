@@ -19,6 +19,14 @@ public class playerMPprint : MonoBehaviour
         MPfix();
         mpPrint();
     }
+    public void endSkill()
+    {
+        if(curMP==maxMP)
+        {
+            info.rage++;
+            curMP = 0;
+        }
+    }
     void mpPrint()
     {
         MPbar.value = ((float)curMP) / maxMP;
