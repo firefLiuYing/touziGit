@@ -13,7 +13,6 @@ public class battleControl : MonoBehaviour
     void Start()
     {
         touzis = loadPref.getPref("touzi");
-        playerTurnStart();
         enermyBeH += aiuhdiua;
     }
     void Update()
