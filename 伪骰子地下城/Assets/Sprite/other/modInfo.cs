@@ -33,6 +33,7 @@ public class modInfo : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
+        weaponLib.beChoseMod.Remove(this);
         if (!beChose)
         {
             if (height == 2)
