@@ -18,6 +18,7 @@ public class enermyBehavior : MonoBehaviour
     IEnumerator autoBattle()
     {
         float t = 0;
+        
         for (int i = 0; i < enermyTouziSort.touzis.Count; i++)
         {
             while (t <= 0.5)

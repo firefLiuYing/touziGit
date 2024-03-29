@@ -51,7 +51,7 @@ public class cellInfo : MonoBehaviour
             onClick += battleButton;
         }
         else if (types == 2)
-            name.text = "Æ»¹û";
+            name.text = "»Ø¸´";
         else
             name.text = "";
     }

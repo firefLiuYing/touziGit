@@ -5,16 +5,16 @@ using UnityEngine;
 public class weaponZone : MonoBehaviour
 {
     RectTransform Rtransform;
-    Rect rect;
+    public Rect rect;
     void Start()
     {
-        fixToScreen();
         Rtransform = GetComponent<RectTransform>();
-        rect = Rtransform.rect;
-        rect.center = transform.position;
+        fixToScreen();
     }
+    public Vector2 mouse;
     void Update()
     {
+        upDatePos();
         ifinImage();
     }
     IEnumerator addToBag(modInfo info)
@@ -35,23 +35,33 @@ public class weaponZone : MonoBehaviour
             if (Input.mousePosition.y>=transform.position.y)
             {
                 info.transform.position = transform.position
-                    + fix * Vector3.up * rect.height / 4;
+                    +Vector3.up * rect.height / 4;
             }
             else
             {
                 info.transform.position = transform.position
-                    + fix * Vector3.down * rect.height / 4;
+                    + Vector3.down * rect.height / 4;
             }
         }
         
     }
     int H = 2160;
+    int W = 3840;
     int screenH;
+    int screenW;
     float fix;
     void fixToScreen()
     {
+        rect = Rtransform.rect;
         screenH = Screen.height;
+        screenW = Screen.width;
         fix= ((float)screenH) / H;
+        rect.height *= ((float)screenH) / H;
+        rect.width *= ((float)screenW) / W;
+    }
+    void upDatePos()
+    {
+        rect.center = transform.position;
     }
     void removeToBag(modInfo info)
     {
@@ -63,17 +73,18 @@ public class weaponZone : MonoBehaviour
     public int curH = 0;
     void ifinImage()
     {
+        mouse=Input.mousePosition;
         if (rect.Contains(Input.mousePosition))
         {
-            if (weaponLib.beChoseMod.Count > 0)
+            if (weaponLib.mod)
             {
                 if (Input.GetMouseButtonUp(0))
-                    if (!weaponLib.beChoseMod[0].beChose)
-                        if(weaponLib.beChoseMod[0].height+curH<=maxH)
-                            StartCoroutine( addToBag(weaponLib.beChoseMod[0]));
+                    if (!weaponLib.mod.beChose)
+                        if(weaponLib.mod.height+curH<=maxH)
+                            StartCoroutine( addToBag(weaponLib.mod));
                 if (Input.GetMouseButtonDown(0))
-                    if (weaponLib.beChoseMod[0].beChose)
-                        removeToBag(weaponLib.beChoseMod[0]);
+                    if (weaponLib.mod.beChose)
+                        removeToBag(weaponLib.mod);
             }
         }
     }

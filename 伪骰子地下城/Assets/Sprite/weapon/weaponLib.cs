@@ -6,7 +6,7 @@ public class weaponLib : MonoBehaviour
 {
     public static List<GameObject> weapons
         = new List<GameObject>();
-    public static List<modInfo> beChoseMod=new List<modInfo>();
+    public static modInfo mod;
     void Start()
     {
         

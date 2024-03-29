@@ -10,6 +10,8 @@ public class battleControl : MonoBehaviour
     public GameObject successUI;
     public GameObject lostUI;
     public Transform weaponUI;
+    public GameObject weaponChooseUI;
+    public GameObject map;
     void Start()
     {
         touzis = loadPref.getPref("touzi");
@@ -18,6 +20,12 @@ public class battleControl : MonoBehaviour
     void Update()
     {
         resultCalculate();
+    }
+    public void backMap()
+    {
+        weaponChooseUI.SetActive(true);
+        map.SetActive(true);
+        successUI.SetActive(false);
     }
     void creatWeapon()
     {

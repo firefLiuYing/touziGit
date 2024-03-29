@@ -19,7 +19,7 @@ public class modInfo : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        weaponLib.beChoseMod.Add(this);
+        weaponLib.mod = this;
         if(height==2)
             weaponWait.highWeaps.Remove(this);
         if(height==1)
@@ -33,7 +33,7 @@ public class modInfo : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
-        weaponLib.beChoseMod.Remove(this);
+        weaponLib.mod = null;
         if (!beChose)
         {
             if (height == 2)
