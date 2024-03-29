@@ -11,8 +11,10 @@ public class cellInfo : MonoBehaviour
     int types;
     public List<cellInfo> connectCells = new List<cellInfo>();
     static int count = 0;
+    public bool isFirst;
     void Start()
     {
+        autofix();
         onClick += move;
         typePrint();
         transform.SetParent(GameObject.Find("map").transform);
@@ -40,6 +42,8 @@ public class cellInfo : MonoBehaviour
     void typePrint()
     {
         types = (int)Random.Range(1, 5);
+        if (isFirst) types = 0;
+        if(count==4) types = 1;
         TextMeshProUGUI name = GetComponentInChildren<TextMeshProUGUI>();
         if (types == 1)
         {
@@ -64,8 +68,22 @@ public class cellInfo : MonoBehaviour
         else if (direct == 3)
             cell.transform.position = transform.position + Vector3.down * deltaH;
         cellInfo info = cell.GetComponent<cellInfo>();
+        info.isFirst = false;
         connectCells.Add(info);
         info.connectCells.Add(this);
+    }
+    int W = 3840;
+    int H = 2160;
+    int screenW;
+    int screenH;    
+    void autofix()
+    {
+        if(!isFirst)
+            gameObject.AddComponent<autoFix>();
+        screenW = Screen.width;
+        screenH = Screen.height;
+        deltaW *= ((float)screenW) / W;
+        deltaH *= ((float)screenH) / H;
     }
     void Update()
     {
