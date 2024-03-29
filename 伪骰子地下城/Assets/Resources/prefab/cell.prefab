@@ -90,9 +90,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectCells: []
+  curHeight: 0
   isFirst: 0
   deltaW: 500
   deltaH: 400
+  cureHP: 10
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  mousePos: {x: 0, y: 0}
 --- !u!1 &1855315332909756508
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,17 +11,18 @@ public class cellInfo : MonoBehaviour
     int types;
     public List<cellInfo> connectCells = new List<cellInfo>();
     static int count = 0;
+    static int enermyCount = 0;
+    static int cureCount = 0;
+    public int curHeight = 0;
     public bool isFirst;
     void Start()
     {
+        Rtransform = GetComponent<RectTransform>();
         autofix();
         onClick += move;
         typePrint();
         transform.SetParent(GameObject.Find("map").transform);
         cells = loadPref.getPref("cell");
-        Rtransform = GetComponent<RectTransform>();
-        rect = Rtransform.rect;
-        rect.center = transform.position;
         StartCoroutine(creatMap());
     }
     GameObject cells;
@@ -43,15 +44,21 @@ public class cellInfo : MonoBehaviour
     {
         types = (int)Random.Range(1, 5);
         if (isFirst) types = 0;
-        if(count==4) types = 1;
+        if(count==5&&enermyCount==0) types = 1;
+        if(count==4&&cureCount==0) types=2;
         TextMeshProUGUI name = GetComponentInChildren<TextMeshProUGUI>();
         if (types == 1)
         {
+            enermyCount++;
             name.text = "Õ½¶·";
             onClick += battleButton;
         }
         else if (types == 2)
+        {
+            cureCount++;
             name.text = "»Ø¸´";
+            onClick += cureButton;
+        }
         else
             name.text = "";
     }
@@ -78,21 +85,38 @@ public class cellInfo : MonoBehaviour
     int screenH;    
     void autofix()
     {
-        if(!isFirst)
+        rect = Rtransform.rect;
+        rect.center = transform.position;
+        if (!isFirst)
             gameObject.AddComponent<autoFix>();
         screenW = Screen.width;
         screenH = Screen.height;
         deltaW *= ((float)screenW) / W;
         deltaH *= ((float)screenH) / H;
+        rect.height*= ((float)screenH) / H;
+        rect.width *= ((float)screenW) / W;
     }
     void Update()
     {
+        upDatePos();
         clickDete();
+    }
+    void upDatePos()
+    {
+        rect.center = transform.position;
     }
     Action onClick;
     void battleButton()
     {
         GameObject.Find("map").SetActive(false);
+        weaponLib.weaponChooseUI.SetActive(true);
+    }
+    public int cureHP;
+    void cureButton()
+    {
+        battleControl control=GameObject.Find("battleControl").
+            GetComponent<battleControl>();
+        control.player.curHP += cureHP;
     }
     void move()
     {

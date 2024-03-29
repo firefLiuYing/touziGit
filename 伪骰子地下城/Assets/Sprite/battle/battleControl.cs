@@ -23,6 +23,7 @@ public class battleControl : MonoBehaviour
     }
     public void backMap()
     {
+        gameExit();
         weaponChooseUI.SetActive(true);
         map.SetActive(true);
         successUI.SetActive(false);
@@ -90,6 +91,32 @@ public class battleControl : MonoBehaviour
         a++;
     }
     bool playerTurn = true;
+    void gameExit()
+    {
+        enermy.curHP = enermy.maxHP;
+        player.freeze = 0;
+        player.poison = 0;
+        player.rage = 0;
+        enermy.freeze = 0;
+        enermy.poison = 0;
+        for (int i = 0; i < autoSort.touzis.Count; i++)
+        {
+            autoSort.touzis[i].beUsed = true;
+        }
+        for (int i = 0; i < weaponSort.weapons.Count; i++)
+        {
+            weaponSort.weapons[i].GetComponentInChildren
+                <weaponInfo>().beUsed = true;
+        }
+        for (int i = 0; i < enermyTouziSort.touzis.Count; i++)
+        {
+            enermyTouziSort.touzis[i].beUsed = true;
+        }
+        for (int i = 0; i < enermyWeaponSort.weapons.Count; i++)
+        {
+            enermyWeaponSort.weapons[i].count = -1;
+        }
+    }
     public void onClickNext()
     {
         if (playerTurn)

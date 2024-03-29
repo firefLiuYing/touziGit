@@ -49,13 +49,11 @@ public class weaponZone : MonoBehaviour
     int W = 3840;
     int screenH;
     int screenW;
-    float fix;
     void fixToScreen()
     {
         rect = Rtransform.rect;
         screenH = Screen.height;
         screenW = Screen.width;
-        fix= ((float)screenH) / H;
         rect.height *= ((float)screenH) / H;
         rect.width *= ((float)screenW) / W;
     }
